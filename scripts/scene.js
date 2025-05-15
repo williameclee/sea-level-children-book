@@ -115,7 +115,7 @@ function setupScene() {
 
 	// create fluid
 	f = scene.fluid = new FlipFluid(density, simWidth, simHeight, cellSpacing, pRadius, maxParticles);
-	loadSceneFromImage('mr-fishs-coral-friends/assets/scene.png', (imageData, width, height) => {
+	loadSceneFromImage('assets/scene.png', (imageData, width, height) => {
 		// Set cell types
 		for (let i = 0; i < f.NumCellX; i++) {
 			for (let j = 0; j < f.NumCellY; j++) {
@@ -165,7 +165,7 @@ function setupScene() {
 		// Now that cellType is ready, place particles & corals
 		placeParticles(f, numX, numY, cellSpacing, pRadius, pHorizontalSpacing, pVerticalSpacing);
 		// addCorals();
-		loadSceneFromImage('mr-fishs-coral-friends/assets/corals.png', (imageData, Lx, Ly) => {
+		loadSceneFromImage('assets/corals.png', (imageData, Lx, Ly) => {
 
 			if (Lx !== f.NumCellX || Ly !== f.NumCellY) {
 				console.error('Coral image size does not match fluid size');
@@ -254,7 +254,7 @@ function loadFish(gl) {
 	gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array([0, 1, 2, 0, 2, 3]), gl.STATIC_DRAW);
 
 	// Load texture
-	loadTexture(gl, 'mr-fishs-coral-friends/assets/fish.png', function (sprite) {
+	loadTexture(gl, 'assets/fish.png', function (sprite) {
 		fishTexture = sprite.texture;
 
 		fishWidth = sprite.width * scene.fluid.h;
